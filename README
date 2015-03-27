@@ -1,0 +1,50 @@
+Boboc Diana-Andreea 312CA
+
+Pentru rezolvarea problemei am implementat functiile cerute astfel:
+
+        -> functia PageRank:
+                    -am citit valorile intregi din fisierul de intrare intr-un 
+                    vector, iar valorile float val1 si val2 separat
+                    -am format numele fisierului de iesire
+                    -am obtinut si afisat cei doi vectori R1 si R2 apeland functiile 
+                    Iterative() si Algebraic()
+                    -am ordonat descrescator vectorul R2
+                    -am afisat valorile i j F,apeland functia Apartenenta();
+                    
+        -> functia Iterative:
+                    -am format matricea de adiacenta A si matricea diagonala a 
+                    gradelor K
+                    -am tratat cazul in care matricea de adiacenta nu are 0 pe 
+                    diagonala principala
+                    -am calculat inversa matricei K,stiind ca aceasta este o 
+                    matrice diagonala cu elementele nenule egale cu inversul 
+                    elementelor nenule ale lui K
+                    -am calculat valoarea vectorului R, pornind de la o aproximatie 
+                    initiala a acestuia, R0, si oprindu-ma cand || R-R0 || <eps*||R0||
+                  
+        ->functia GramSchmidt:
+                    -calculeaza inversa unei matrici, factorizand-o pe aceasta 
+                    intr-un produs QR
+                    -am implementat algoritmul Gram-Schmidt de aflare a matricelor 
+                    Q si R
+                    -am rezolvat cele n sisteme T*x(i)=e(i), stiind ca T=Q*R si 
+                    deci R*x(i)=Q'*e(i), ceea ce a dus la rezolvarea unui sistem 
+                    superior triunghiular
+                    
+        ->functia Algebraic:
+                    -am format matricea de adiacenta A si matricea diagonala a 
+                    gradelor K
+                    -am tratat cazul in care matricea de adiacenta nu are 0 pe 
+                    diagonala principala
+                    -am calculat inversa matricei K,stiind ca aceasta este o 
+                    matrice diagonala cu elementele nenule egale cu inversul 
+                    elementelor nenule ale lui K
+                    -am calculat inversa matricei In-d*M, folosind functia GramSchmidt
+                    -am calculat vectorul R folosind formula data pentru 
+                    t->inifinit : R=B*(1-d)/n*1;
+                    
+        ->functia Apartenenta:
+                    -punand conditia ca functia u(x) sa fie continua,a facut ca 
+                    a=1/(val2-val1) si b=val1/(val1-val2)
+                    -am identificat valoarea corespunzatoare lui u(x) in functie 
+                    de intervalul din care face parte
